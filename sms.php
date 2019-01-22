@@ -5,7 +5,7 @@ $channelSecret = 'd004cf371d24fc6b9a6941c8b1103860';
 $pushID = 'U3892909119edd655235f467088f954f6';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-$text = $_GET["t"]
+$text = $_GET['t'];
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
