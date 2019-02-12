@@ -4,8 +4,8 @@ $access_token = 'Bv/PUIP/rMX3jysSVM2dP1KVAZDJPIa2MLngjgcXFoZ35bH/h1vJiQdx0ZIrhsN
 
 $url = 'https://api.line.me/oauth2/v2.1/verify';
 
-//$headers = array('Authorization: Bearer ' . $access_token);
-$headers = $access_token;
+$headers = array('Authorization: Bearer ' . $access_token);
+//$headers = $access_token;
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
