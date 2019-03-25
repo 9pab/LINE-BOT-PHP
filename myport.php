@@ -1,7 +1,7 @@
 <?php
 require "vendor/autoload.php";
 
-$url = 'http://www.altisclub.com/myport.php';
+$url = 'http://ocb1.herokuapp.com/myporttobot.php';
 $handle = curl_init($url);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 $resp = curl_exec($handle);
