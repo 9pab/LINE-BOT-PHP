@@ -80,13 +80,15 @@ foreach($MyPort as $fund => $f_nav) {
 }
 print "<tr bgcolor=#CCCCCC><td colspan=3><b>Summary</b></td><td align=right><b>".number_format($GT,2)."</b></td><td align=right><b>".number_format($cost,2)."</b></td><td align=right><b>".number_format($GT-$cost,2)."</b></td><td align=right><b>".number_format(($GT-$cost)/$cost*100,2)."%</b></td></tr></table>\n";
 
-print 'html2canvas(document.body).then(function(canvas) {
+print '<script>
+    html2canvas(document.body).then(function(canvas) {
     // Export the canvas to its data URI representation
     var base64image = canvas.toDataURL("image/png");
 
     // Open the image in a new window
     window.open(base64image , "_blank");
-});';
+    });
+    </script>';
 
 /*
 $to = "piboonsak@gmail.com";
