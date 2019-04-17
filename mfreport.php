@@ -77,6 +77,10 @@ foreach($MyPort as $fund => $f_nav) {
 }
 print "<tr bgcolor=#CCCCCC><td colspan=3><b>Summary</b></td><td align=right><b>".number_format($GT,2)."</b></td><td align=right><b>".number_format($cost,2)."</b></td><td align=right><b>".number_format($GT-$cost,2)."</b></td><td align=right><b>".number_format(($GT-$cost)/$cost*100,2)."%</b></td></tr></table>\n";
 
+html2canvas(document.body).then(function(canvas) {
+    document.body.appendChild(canvas);
+});
+
 /*
 $to = "piboonsak@gmail.com";
 $subject = "Port summary for ".$date;
