@@ -43,6 +43,9 @@ do {
   }
 } while ($httpCode != 200);
 
+print '<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>';
+print '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>';
+
 print '<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">';
 print '<style>table, th, td {font-family: "Roboto", sans-serif; border: 0px solid white; padding:5px} tr:hover {background-color: #EEEEEE;font-weight: bold;}</style>';
 
