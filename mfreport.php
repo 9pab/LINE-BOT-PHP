@@ -43,9 +43,6 @@ do {
   }
 } while ($httpCode != 200);
 
-print '<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>';
-print '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>';
-
 print '<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">';
 print '<style>table, th, td {font-family: "Roboto", sans-serif; border: 0px solid white; padding:5px} tr:hover {background-color: #EEEEEE;font-weight: bold;}</style>';
 
@@ -79,17 +76,6 @@ foreach($MyPort as $fund => $f_nav) {
   $cost = $cost+$f_nav[2];
 }
 print "<tr bgcolor=#CCCCCC><td colspan=3><b>Summary</b></td><td align=right><b>".number_format($GT,2)."</b></td><td align=right><b>".number_format($cost,2)."</b></td><td align=right><b>".number_format($GT-$cost,2)."</b></td><td align=right><b>".number_format(($GT-$cost)/$cost*100,2)."%</b></td></tr></table>\n";
-
-print '<script>
-    html2canvas(document.body).then(function(canvas) {
-    // Export the canvas to its data URI representation
-    var base64image = canvas.toDataURL("image/png");
-    document.body.appendChild(canvas);
-
-    // Open the image in a new window
-    window.open(base64image , "_blank");
-    });
-    </script>';
 
 /*
 $to = "piboonsak@gmail.com";
