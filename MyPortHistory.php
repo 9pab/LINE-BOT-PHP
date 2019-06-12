@@ -67,7 +67,7 @@ $change = number_format($GT-$last_GT,2);
 $r_change = number_format(($GT-$last_GT)/$last_GT*100,2);
 if ($change > 0) {$change = '+'.$change;$r_change = '+'.$r_change;}
 
-$data = array("value1" => $GT, "value2" => $cost);
+$data = array("value1" => $date, "value2" => $GT, "value3" => $cost);
 $data_string = json_encode($data);
 
 $ch = curl_init('https://maker.ifttt.com/trigger/NAV/with/key/4IATSriSb9uIgYMbWKN1C');
