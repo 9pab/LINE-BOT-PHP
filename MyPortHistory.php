@@ -52,8 +52,6 @@ foreach($MyPort as $fund => $f_nav) {
   $result = curl_exec($ch);
   curl_close($ch);
   $nav = json_decode($result);
-  $val[$i] = $nav->{'last_val'};
-  $i = $i++;
   $amount = $nav->{'last_val'}*$f_nav[1];
   $last_amount = $nav->{'previous_val'}*$f_nav[1];
   $balance = number_format(($amount-$f_nav[2]),2);
@@ -69,7 +67,7 @@ $change = number_format($GT-$last_GT,2);
 $r_change = number_format(($GT-$last_GT)/$last_GT*100,2);
 if ($change > 0) {$change = '+'.$change;$r_change = '+'.$r_change;}
 
-$data = array("value1" => $date, "value2" => $GT, "value3" => $cost, "val1" => $val[0], "val2" => $val[1], "val3" => $val[2], "val4" => $val[3], "val5" => $val[4], "val6" => $val[5], "val7" => $val[6], "val8" => $val[7],);
+$data = array("value1" => $date, "value2" => $GT, "value3" => $cost);
 $data_string = json_encode($data);
 
 $ch = curl_init('https://maker.ifttt.com/trigger/NAV/with/key/4IATSriSb9uIgYMbWKN1C');
