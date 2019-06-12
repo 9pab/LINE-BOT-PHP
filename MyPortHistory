@@ -67,10 +67,13 @@ $change = number_format($GT-$last_GT,2);
 $r_change = number_format(($GT-$last_GT)/$last_GT*100,2);
 if ($change > 0) {$change = '+'.$change;$r_change = '+'.$r_change;}
 
-print "Port summary\n";
-print "   Cost : ".number_format($cost,2)."\n";
-print "   Value : ".number_format($GT,2)."\n";
-print "   Chg : ".$change." [".$r_change."%]\n";
-print "   P/L : ".number_format($GT-$cost,2)." [".number_format(($GT-$cost)/$cost*100,2)."%]\n";
-print "═════════════\n";
+$data = array("value1" => $GT, "value2" => $cost);
+$data_string = json_encode($data);
+
+$ch = curl_init('https://maker.ifttt.com/trigger/NAV/with/key/4IATSriSb9uIgYMbWKN1C');
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+$result = curl_exec($ch);
 ?>
