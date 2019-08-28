@@ -1,24 +1,21 @@
 <?php
-   $accessToken = 'Bv/PUIP/rMX3jysSVM2dP1KVAZDJPIa2MLngjgcXFoZ35bH/h1vJiQdx0ZIrhsNqXR+XwnlDxxU1R9SSbKVSQFbKj03ZGEnRmakhwQw7qbSzyOqMkzrRuK9rH4/t82AY8ukObORKpvQCdLTXVtJWzQdB04t89/1O/w1cDnyilFU=';//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   $content = file_get_contents('php://input');
-   $arrayJson = json_decode($content, true);
+   $access_token = 'Bv/PUIP/rMX3jysSVM2dP1KVAZDJPIa2MLngjgcXFoZ35bH/h1vJiQdx0ZIrhsNqXR+XwnlDxxU1R9SSbKVSQFbKj03ZGEnRmakhwQw7qbSzyOqMkzrRuK9rH4/t82AY8ukObORKpvQCdLTXVtJWzQdB04t89/1O/w1cDnyilFU=';
+   $channelSecret = 'd004cf371d24fc6b9a6941c8b1103860';
+   $pushID = 'U3892909119edd655235f467088f954f6';
+   
    $arrayHeader = array();
    $arrayHeader[] = "Content-Type: application/json";
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
-   //รับข้อความจากผู้ใช้
-   $message = $arrayJson['events'][0]['message']['text'];
-   //รับ id ของผู้ใช้
-   $id = $arrayJson['events'][0]['source']['userId'];
+
    #ตัวอย่าง Message Type "Text + Sticker"
-   if($message == "สวัสดี"){
-      $arrayPostData['to'] = $id;
-      $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-      $arrayPostData['messages'][1]['type'] = "sticker";
-      $arrayPostData['messages'][1]['packageId'] = "2";
-      $arrayPostData['messages'][1]['stickerId'] = "34";
-      pushMsg($arrayHeader,$arrayPostData);
-   }
+   $arrayPostData['to'] = $pushIP;
+   $arrayPostData['messages'][0]['type'] = "text";
+   $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+   $arrayPostData['messages'][1]['type'] = "sticker";
+   $arrayPostData['messages'][1]['packageId'] = "2";
+   $arrayPostData['messages'][1]['stickerId'] = "34";
+   pushMsg($arrayHeader,$arrayPostData);
+      
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
