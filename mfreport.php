@@ -80,7 +80,7 @@ if (curl_errno($ch)) {
 }
 curl_close ($ch);
 $res = json_decode($result,true);
-echo $res;
+echo $res['url'];
 
 /*
 $to = "piboonsak@gmail.com";
