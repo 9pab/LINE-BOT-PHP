@@ -6,19 +6,22 @@ $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$access_token}";
 
+//Message0
 $url = 'http://ocb1.herokuapp.com/myporttobot.php';
 $handle = curl_init($url);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
-$resp = curl_exec($handle);
+$mesg0 = curl_exec($handle);
 curl_close($handle);
+
+//Message1
 
 //Messages
 $arrayPostData['to'] = $pushID;
 $arrayPostData['messages'][0]['type'] = "text";
-$arrayPostData['messages'][0]['text'] = $resp;
-$arrayPostData['messages'][1]['type'] = "sticker";
-$arrayPostData['messages'][1]['packageId'] = "2";
-$arrayPostData['messages'][1]['stickerId'] = "34";
+$arrayPostData['messages'][0]['text'] = $mesg0;
+$arrayPostData['messages'][1]['type'] = "image";
+$arrayPostData['messages'][1]['originalContentUrl'] = "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png";
+$arrayPostData['messages'][1]['previewImageUrl'] = "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png";
 pushMsg($arrayHeader,$arrayPostData);
 
 function pushMsg($arrayHeader,$arrayPostData){
