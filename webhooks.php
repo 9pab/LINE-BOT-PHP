@@ -25,16 +25,25 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			$command = $event['message']['text'];
 			
-			$arrayPostData['messages'][0]['type'] = "text";
-			$arrayPostData['messages'][0]['text'] = $command;
-			pushMsg($arrayHeader,$arrayPostData);
-
+			switch ($command) {
+				case "1" :
+					$arrayPostData['messages'][0]['type'] = "text";
+					$arrayPostData['messages'][0]['text'] = "You press 1";
+					break;
+				case "2" :
+					$arrayPostData['messages'][0]['type'] = "text";
+					$arrayPostData['messages'][0]['text'] = "You press 2";
+					break;
+				default :
+					$arrayPostData['messages'][0]['type'] = "text";
+					$arrayPostData['messages'][0]['text'] = $command;
+			}
 		} else {
 			// Build message to reply back when is not 'text' format
 			$arrayPostData['messages'][0]['type'] = "text";
 			$arrayPostData['messages'][0]['text'] = "กรุณาส่งเป็นข้อความเท่านั้น";
-			pushMsg($arrayHeader,$arrayPostData);
 		}
+	pushMsg($arrayHeader,$arrayPostData);
 	}
 }
 
