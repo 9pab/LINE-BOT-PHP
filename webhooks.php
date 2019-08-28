@@ -21,13 +21,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$arrayPostData['replyToken'] = $replyToken;
 
-			
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			$arrayPostData['messages'][0]['type'] = "text";
-			$arrayPostData['messages'][0]['text'] = "Hello\n".$UID."\n"."replyToken\n".$replyToken;
-			pushMsg($arrayHeader,$arrayPostData);
+			$command = $event['message']['text'];
 			
+			$arrayPostData['messages'][0]['type'] = "text";
+			$arrayPostData['messages'][0]['text'] = $command;
+			pushMsg($arrayHeader,$arrayPostData);
+
 		} else {
 			// Build message to reply back when is not 'text' format
 			$arrayPostData['messages'][0]['type'] = "text";
