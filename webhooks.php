@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back when is not 'text' format
 			$messages = [
 				'type' => 'text',
-				'text' => "Don't understand"
+				'text' => "กรุณาส่งข้อความเท่านั้น"
 			];
 			$data = [
 				'replyToken' => $replyToken,
