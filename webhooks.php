@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 		} else {
 			// Build message to reply back when is not 'text' format
 			$arrayPostData['messages'][0]['type'] = "text";
-			$arrayPostData['messages'][0]['text'] = 'กรุณาส่งเป็นข้อความเท่านั้น หากไม่ทราบให้พิมพ์ "ช่วยเหลือ"';
+			$arrayPostData['messages'][0]['text'] = "กรุณาส่งเป็นข้อความเท่านั้น";
 			pushMsg($arrayHeader,$arrayPostData);
 		}
 	}
