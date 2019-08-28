@@ -1,7 +1,14 @@
 <?php // webhooks.php
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+
 $access_token = 'Bv/PUIP/rMX3jysSVM2dP1KVAZDJPIa2MLngjgcXFoZ35bH/h1vJiQdx0ZIrhsNqXR+XwnlDxxU1R9SSbKVSQFbKj03ZGEnRmakhwQw7qbSzyOqMkzrRuK9rH4/t82AY8ukObORKpvQCdLTXVtJWzQdB04t89/1O/w1cDnyilFU=';
+$pushID = 'U3892909119edd655235f467088f954f6';
+
+$arrayHeader = array();
+$arrayHeader[] = "Content-Type: application/json";
+$arrayHeader[] = "Authorization: Bearer {$access_token}";
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -10,50 +17,38 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
-			// Get User ID
 			$UID = $event['source']['userId'];
-			// Get replyToken
 			$replyToken = $event['replyToken'];
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
+			$arrayPostData['replyToken'] = $replyToken;
+
 			
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => "Hello\n".$UID."\n"."replyToken\n".$replyToken
-			];
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			
+			$arrayPostData['messages'][0]['type'] = "text";
+			$arrayPostData['messages'][0]['text'] = "Hello\n".$UID."\n"."replyToken\n".$replyToken;
+			pushMsg($arrayHeader,$arrayPostData);
 			
 		} else {
 			// Build message to reply back when is not 'text' format
-			$messages = [
-				'type' => 'text',
-				'text' => "กรุณาส่งข้อความเท่านั้น"
-			];
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
+			$arrayPostData['messages'][0]['type'] = "text";
+			$arrayPostData['messages'][0]['text'] = "กรุณาส่งเป็นข้อความเท่านั้น";
+			pushMsg($arrayHeader,$arrayPostData);
 		}
-		
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-			echo $result . "\r\n";			
 	}
 }
 
+function pushMsg($arrayHeader,$arrayPostData){
+	$strUrl = "https://api.line.me/v2/bot/message/reply";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$strUrl);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrayPostData));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	$result = curl_exec($ch);
+	curl_close ($ch);
+}
+exit;
 ?>
