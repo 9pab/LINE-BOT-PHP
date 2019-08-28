@@ -33,9 +33,7 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			
-			$data1 = $events;
-			
-			$post = json_encode($data1);
+			$post = json_encode($events);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
