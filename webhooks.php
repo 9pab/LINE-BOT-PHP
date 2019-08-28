@@ -29,16 +29,6 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			
-			//test
-			$messages = [
-				'type' => 'image',
-				'originalContentUrl' => "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png",
-				'previewImageUrl' => "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png"
-			];
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
 			
 		} else {
 			// Build message to reply back when is not 'text' format
