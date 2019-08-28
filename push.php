@@ -8,7 +8,7 @@
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
    #ตัวอย่าง Message Type "Text + Sticker"
-   $arrayPostData['to'] = $pushIP;
+   $arrayPostData['to'] = $pushID;
    $arrayPostData['messages'][0]['type'] = "text";
    $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
    $arrayPostData['messages'][1]['type'] = "sticker";
