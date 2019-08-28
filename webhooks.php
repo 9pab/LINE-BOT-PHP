@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "สวัสดี ".$text."/n"
+				'text' => "สวัสดี\n".$text."\n"."replyToken\n".$replyToken
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
