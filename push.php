@@ -15,13 +15,14 @@ curl_close($handle);
 
 //Message1
 
+
 //Messages
 $arrayPostData['to'] = $pushID;
 $arrayPostData['messages'][0]['type'] = "text";
 $arrayPostData['messages'][0]['text'] = $mesg0;
-$arrayPostData['messages'][1]['type'] = "image";
-$arrayPostData['messages'][1]['originalContentUrl'] = "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png";
-$arrayPostData['messages'][1]['previewImageUrl'] = "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png";
+$arrayPostData['messages'][1]['type'] = "sticker";
+$arrayPostData['messages'][1]['packageId'] = "2";
+$arrayPostData['messages'][1]['stickerId'] = "34";
 pushMsg($arrayHeader,$arrayPostData);
 
 function pushMsg($arrayHeader,$arrayPostData){
