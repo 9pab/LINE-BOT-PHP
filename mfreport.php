@@ -57,7 +57,30 @@ foreach($MyPort as $fund => $f_nav) {
 }
 $page .= "<tr bgcolor=#CCCCCC><td colspan=3><b>Summary</b></td><td align=right><b>".number_format($GT,2)."</b></td><td align=right><b>".number_format($cost,2)."</b></td><td align=right><b>".number_format($GT-$cost,2)."</b></td><td align=right><b>".number_format(($GT-$cost)/$cost*100,2)."%</b></td></tr></table>\n";
 
-print $page;
+//print $page;
+
+$data = array('html'=>$page);
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://hcti.io/v1/image");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_POST, 1);
+// Retrieve your user_id and api_key from https://htmlcsstoimage.com/dashboard
+curl_setopt($ch, CURLOPT_USERPWD, "cb58219e-af90-4afd-be5b-a91348821f08" . ":" . "ba2ffbc4-1829-433e-88d5-2f3a42c669e5");
+
+$headers = array();
+$headers[] = "Content-Type: application/x-www-form-urlencoded";
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+  echo 'Error:' . curl_error($ch);
+}
+curl_close ($ch);
+$res = json_decode($result,true);
+echo $res['url'];
 
 /*
 $to = "piboonsak@gmail.com";
