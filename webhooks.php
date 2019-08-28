@@ -27,8 +27,14 @@ if (!is_null($events['events'])) {
 			
 			switch ($command) {
 				case "1" :
+					$url = 'http://ocb1.herokuapp.com/myporttobot.php';
+					$handle = curl_init($url);
+					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					$resp = curl_exec($handle);
+					curl_close($handle);
+					
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "You press 1";
+					$arrayPostData['messages'][0]['text'] = $resp;
 					break;
 				case "2" :
 					$arrayPostData['messages'][0]['type'] = "text";
@@ -36,7 +42,7 @@ if (!is_null($events['events'])) {
 					break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = $command;
+					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 ทำอะไร";
 			}
 		} else {
 			// Build message to reply back when is not 'text' format
