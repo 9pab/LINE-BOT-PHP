@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back when is not 'text' format
 			$messages = [
 				'type' => 'text',
-				'text' => "อย่ามามั่ว"
+				'text' => "Don't understand"
 			];
 			// Make a POST Request to Messaging API to reply to sender
 			$data = [
