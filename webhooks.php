@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 			
 			//test
 			$messages = [
-				'type' => "image",
+				'type' => 'image',
 				'originalContentUrl' => "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png",
 				'previewImageUrl' => "https://hcti.io/v1/image/cf816d13-1ba9-411a-b500-008c6db882a5.png"
 			]
