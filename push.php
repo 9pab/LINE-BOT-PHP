@@ -5,7 +5,7 @@
    
    $arrayHeader = array();
    $arrayHeader[] = "Content-Type: application/json";
-   $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   $arrayHeader[] = "Authorization: Bearer {$access_Token}";
 
    #ตัวอย่าง Message Type "Text + Sticker"
    $arrayPostData['to'] = $pushID;
