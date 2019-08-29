@@ -36,11 +36,11 @@ if (!is_null($events['events'])) {
 					break;
 				case "2" :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "You press 2";
+					$arrayPostData['messages'][0]['text'] = $event;
 					break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 ทำอะไร";
+					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง $event";
 			}
 		} else {
 			// Build message to reply back when is not 'text' format
