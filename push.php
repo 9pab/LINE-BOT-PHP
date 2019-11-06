@@ -46,6 +46,27 @@ $arrayPostData = array(
 			"packageId" => "2",
 			"stickerId" => "34",
 		),
+		2 => array(
+			"type" => "flex",
+			"altText" => "Test flex message",
+			"contents" => array(
+				"type" => "bouble",
+				"body" => array(
+					'type' => 'box',
+      				'layout' => 'vertical',
+      				'contents' => array(
+						0 => array(
+							'type' => 'text',
+							'text' => 'hello',
+						),
+						1 => array(
+							'type' => 'text',
+							'text' => 'world',
+						),
+					),
+				),
+			),
+		),
 	),
 );
 
