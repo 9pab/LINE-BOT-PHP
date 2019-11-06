@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][0]['type'] = "flex";
 					$arrayPostData['messages'][0]['altText'] = "Fund Portfolio";
 					$arrayPostData['messages'][0]['contents']['type'] = "bouble:";
-					$arrayPostData['messages'][0]['contents']['size'] = "giga";
+					//$arrayPostData['messages'][0]['contents']['size'] = "giga";
 					$arrayPostData['messages'][0]['contents']['body']['type'] = "box";
 					$arrayPostData['messages'][0]['contents']['body']['contents'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['contents']['body']['contents'][0]['text'] = "Fund Portfolio";
