@@ -37,6 +37,8 @@ if (!is_null($events['events'])) {
 				case "2" :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = $content;
+					$arrayPostData['messages'][1]['type'] = "text";
+					$arrayPostData['messages'][1]['text'] = "You select #2";
 					break;
 				case "3" :
 					$arrayPostData['messages'][0]['type'] = "flex";
