@@ -43,9 +43,9 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][0]['altText'] = "Fund Portfolio";
 					$arrayPostData['messages'][0]['contents']['type'] = "bouble:";
 					$arrayPostData['messages'][0]['contents']['size'] = "giga";
-					$arrayPostData['messages'][0]['contents']['body']['type'] = "box";
-					$arrayPostData['messages'][0]['contents']['body']['contents']['type'] = "test";
-					$arrayPostData['messages'][0]['contents']['body']['contents']['text'] = "Fund Portfolio";
+					$arrayPostData['messages'][0]['contents'][0]['body']['type'] = "box";
+					$arrayPostData['messages'][0]['contents'][0]['body']['contents'][0]['type'] = "test";
+					$arrayPostData['messages'][0]['contents'][0]['body']['contents'][0]['text'] = "Fund Portfolio";
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
