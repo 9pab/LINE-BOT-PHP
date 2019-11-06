@@ -38,33 +38,29 @@ $arrayPostData = array(
 	'to' => $pushID,
 	'messages' => array(
 		0 => array(
-			"type" => "text",
-			"text" => "Test flex message",
+			'type' => 'text',
+			'text' => 'Test flex message',
 		),
-		1 => array (
+		1 => array(
 			'type' => 'flex',
 			'altText' => 'this is a flex message',
-			'contents' => 
-			array (
-			  'type' => 'bubble',
-			  'body' => 
-			  array (
-				'type' => 'box',
-				'layout' => 'vertical',
-				'contents' => 
-				array (
-				  0 => 
-				  array (
-					'type' => 'text',
-					'text' => 'hello',
-				  ),
-				  1 => 
-				  array (
-					'type' => 'text',
-					'text' => 'world',
-				  ),
+			'contents' => array(
+				'type' => 'bubble',
+				'size' => 'giga',
+				'body' => array(
+					'type' => 'box',
+					'layout' => 'vertical',
+					'contents' => array(
+						0 => array(
+							'type' => 'text',
+							'text' => 'hello',
+						),
+						1 => array(
+							'type' => 'text',
+							'text' => 'world',
+						),
+					),
 				),
-			  ),
 			),
 		),
 	),
