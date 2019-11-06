@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 					
 					$arrayPostData['messages'][1]['type'] = "flex";
 					$arrayPostData['messages'][1]['altText'] = "Fund Portfolio";
-					$arrayPostData['messages'][1]['contents']['type'] = "bubble:";
+					$arrayPostData['messages'][1]['contents']['type'] = "bubble";
 					$arrayPostData['messages'][1]['contents']['body']['type'] = "box";
 					$arrayPostData['messages'][1]['contents']['body']['layout'] = "vertical";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['type'] = "text";
@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 Flex message 16:30";
+					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 Flex message 16:31";
 			}
 		} else {
 			// Build message to reply back when is not 'text' format
