@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 				case "3" :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "Flex";
-
+/*
 					$arrayPostData['messages'][1]['type'] = "flex";
 					$arrayPostData['messages'][1]['altText'] = "Fund Portfolio";
 					$arrayPostData['messages'][1]['contents']['type'] = "bouble:";
@@ -52,6 +52,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['text'] = "Hello 1";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][1]['type'] = "text";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][1]['text'] = "Hello 2";
+*/
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
