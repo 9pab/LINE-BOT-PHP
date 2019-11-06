@@ -43,11 +43,11 @@ if (!is_null($events['events'])) {
 				case "3" :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "Flex";
-					
+
 					$arrayPostData['messages'][1]['type'] = "flex";
 					$arrayPostData['messages'][1]['altText'] = "Fund Portfolio";
 					$arrayPostData['messages'][1]['contents']['type'] = "bouble:";
-					$arrayPostData['messages'][0]['contents']['size'] = "giga";
+					$arrayPostData['messages'][1]['contents']['size'] = "giga";
 					$arrayPostData['messages'][1]['contents']['body']['type'] = "box";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['type'] = "text";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['text'] = "Fund Portfolio";
