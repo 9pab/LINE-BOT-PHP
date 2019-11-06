@@ -39,10 +39,14 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][0]['text'] = $content;
 					break;
 				case "3" :
-					$arrayPostData['messages'][0]['type'] = "sticker";
-					$arrayPostData['messages'][0]['stickerId'] = 215641749;
-					$arrayPostData['messages'][0]['packageId'] = 15049;
-					break;
+					$arrayPostData['messages'][0]['type'] = "flex";
+					$arrayPostData['messages'][0]['altText'] = "Fund Portfolio";
+					$arrayPostData['messages'][0]['contents']['type'] = "bouble:";
+					$arrayPostData['messages'][0]['contents']['size'] = "giga";
+					$arrayPostData['messages'][0]['contents']['body']['type'] = "box";
+					$arrayPostData['messages'][0]['contents']['body']['contents']['type'] = "test";
+					$arrayPostData['messages'][0]['contents']['body']['contents']['text'] = "Fund Portfolio";
+				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 sticker";
