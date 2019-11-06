@@ -41,15 +41,16 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['text'] = "You select #2";
 					break;
 				case "3" :
-					$arrayPostData['messages'][0]['type'] = "flex";
-					$arrayPostData['messages'][0]['altText'] = "Fund Portfolio";
-					$arrayPostData['messages'][0]['contents']['type'] = "bouble:";
-					//$arrayPostData['messages'][0]['contents']['size'] = "giga";
-					$arrayPostData['messages'][0]['contents']['body']['type'] = "box";
-					$arrayPostData['messages'][0]['contents']['body']['contents'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['contents']['body']['contents'][0]['text'] = "Fund Portfolio";
-					$arrayPostData['messages'][1]['type'] = "text";
-					$arrayPostData['messages'][1]['text'] = "Flex";
+					$arrayPostData['messages'][0]['type'] = "text";
+					$arrayPostData['messages'][0]['text'] = "Flex";
+					
+					$arrayPostData['messages'][1]['type'] = "flex";
+					$arrayPostData['messages'][1]['altText'] = "Fund Portfolio";
+					$arrayPostData['messages'][1]['contents']['type'] = "bouble:";
+					$arrayPostData['messages'][0]['contents']['size'] = "giga";
+					$arrayPostData['messages'][1]['contents']['body']['type'] = "box";
+					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['type'] = "text";
+					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['text'] = "Fund Portfolio";
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
