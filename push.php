@@ -15,7 +15,7 @@ curl_close($handle);
 
 //Message1
 
-
+/*
 //Messages
 $arrayPostData['to'] = $pushID;
 $arrayPostData['messages'][0]['type'] = "text";
@@ -32,6 +32,23 @@ $arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] = "text
 $arrayPostData['messages'][2]['contents']['body']['contents'][0]['text'] = "Hello 1";
 $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] = "text";
 $arrayPostData['messages'][2]['contents']['body']['contents'][1]['text'] = "Hello 2";
+*/
+
+$arrayPostData = array(
+	'to' => $pushID,
+	'messages' => array(
+		0 => array(
+			"type" => "text",
+			"text" => "Test flex message",
+		),
+		1 => array(
+			"type" => "sticker",
+			"packageId" => "2",
+			"stickerId" => "34",
+		),
+	),
+);
+
 pushMsg($arrayHeader,$arrayPostData);
 
 function pushMsg($arrayHeader,$arrayPostData){
