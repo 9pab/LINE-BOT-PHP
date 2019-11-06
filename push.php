@@ -23,6 +23,15 @@ $arrayPostData['messages'][0]['text'] = $mesg0;
 $arrayPostData['messages'][1]['type'] = "sticker";
 $arrayPostData['messages'][1]['packageId'] = "2";
 $arrayPostData['messages'][1]['stickerId'] = "34";
+$arrayPostData['messages'][1]['type'] = "flex";
+$arrayPostData['messages'][2]['altText'] = "Fund Portfolio";
+$arrayPostData['messages'][2]['contents']['type'] = "bouble:";
+$arrayPostData['messages'][2]['contents']['body']['type'] = "box";
+$arrayPostData['messages'][2]['contents']['body']['layout'] = "vertical";
+$arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] = "text";
+$arrayPostData['messages'][2]['contents']['body']['contents'][0]['text'] = "Hello 1";
+$arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] = "text";
+$arrayPostData['messages'][2]['contents']['body']['contents'][1]['text'] = "Hello 2";
 pushMsg($arrayHeader,$arrayPostData);
 
 function pushMsg($arrayHeader,$arrayPostData){
