@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 sticker";
+					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 Flex message";
 			}
 		} else {
 			// Build message to reply back when is not 'text' format
