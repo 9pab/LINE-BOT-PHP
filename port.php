@@ -102,7 +102,7 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     //$data = json_decode($result);
-    print ' test : '.$result;
+    print $v['id'] . " " . $result;
     //print $i . " = " . $v['name'] . "   NAV = ". $data['last_val'] . "<br>";
 }
 
