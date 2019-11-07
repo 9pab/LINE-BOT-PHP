@@ -1,6 +1,4 @@
 {
     "git.postCommitCommand": "sync",
-    "git.autofetch": true,
-    "phpfmt.detect_indent": true,
-    "phpfmt.enable_auto_align": true
+    "git.autofetch": true
 }
