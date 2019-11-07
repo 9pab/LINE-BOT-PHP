@@ -65,6 +65,7 @@ $port = array(
     ),
 );
 
+/*
 //Check response
 do {
     $url = 'https://api.sec.or.th/FundDailyInfo/M0712_2547/dailynav/' . $date;
@@ -83,10 +84,32 @@ do {
         $date = date('Y-m-d', $time);
     }
 } while ($httpCode != 200);
+*/
 
-print "Lastest NAV date : " . $date . "\n";
-print "────────────\n";
+//Loop to get current value
+foreach ($port as $i => $v) {
+    $url = 'https://api.sec.or.th/FundDailyInfo/' . $v['id'] . '/dailynav/' . $date;
+    $access_token = 'f68ef6fd0b4a4ce196d6255bd9a96ce4';
+    $headers = array('Ocp-Apim-Subscription-Key:' . $access_token);
 
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $data = json_decode($result);
+
+    print $i . " = " . $v['name'] . "NAV = ". $data['last_val'] . "<br>";
+}
+
+//Show result
+//print json_encode($port);
+
+/*
 foreach ($MyPort as $fund => $f_nav) {
 
     $url = 'https://api.sec.or.th/FundDailyInfo/' . $f_nav[0] . '/dailynav/' . $date;
@@ -137,3 +160,5 @@ print "   Value : " . number_format($GT, 2) . "\n";
 print "   Chg : " . $change . " [" . $r_change . "%]\n";
 print "   P/L : " . number_format($GT - $cost, 2) . " [" . number_format(($GT - $cost) / $cost * 100, 2) . "%]\n";
 print "═════════════\n";
+*/
+?>
