@@ -65,7 +65,7 @@ $port = array(
     ),
 );
 
-/*
+
 //Check response
 do {
     $url = 'https://api.sec.or.th/FundDailyInfo/M0712_2547/dailynav/' . $date;
@@ -84,7 +84,7 @@ do {
         $date = date('Y-m-d', $time);
     }
 } while ($httpCode != 200);
-*/
+
 
 //Loop to get current value
 foreach ($port as $i => $v) {
@@ -102,7 +102,7 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     //$data = json_decode($result);
-    print $v['id'] . " " . $result;
+    print $v['id'] . " = " . $result;
     //print $i . " = " . $v['name'] . "   NAV = ". $data['last_val'] . "<br>";
 }
 
