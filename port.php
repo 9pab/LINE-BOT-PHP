@@ -101,9 +101,9 @@ foreach ($port as $i => $v) {
     $result = curl_exec($ch);
     curl_close($ch);
 
-    $data = json_decode($result);
-
-    print $i . " = " . $v['name'] . "NAV = ". $data['last_val'] . "<br>";
+    //$data = json_decode($result);
+    print $data;
+    //print $i . " = " . $v['name'] . "NAV = ". $data['last_val'] . "<br>";
 }
 
 //Show result
