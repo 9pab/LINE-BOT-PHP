@@ -90,13 +90,17 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     $data = json_decode($result,true);
-    print $v['name'] . " Cost = " . $v['cost'] . " Value = " . $v['value'] = $v['unit']*$data['last_val'] . "<br>";
+    $v['last_value'] = $v['unit']*$data['last_val'];
+    $v['previous_value'] = $v['unit']*$data['previous_val'];
     $total_cost = $total_cost + $v['cost'];
-    $total_value = $total_value + $v['value'];
+    $total_last_value = $total_last_value + $v['last_value'];
+    $total_previous_value = $total_previous_value + $v['previous_value']
 }
 
 //Show result
-print $total_cost . "  " . $total_value;
+print $total_cost . "<Br>";
+print $total_last_value . "<Br>";
+print $total_previous_value . "<Br>";
 
 /*
 ?>
