@@ -90,7 +90,7 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     $data = json_decode($result,true);
-    //print $v['name'] . " Cost = " . $v['cost'] . " Value = " . $v['value'] = $v['unit']*$data['last_val'] . "<br>";
+    print $v['name'] . " Cost = " . $v['cost'] . " Value = " . $v['value'] = $v['unit']*$data['last_val'] . "<br>";
     $total_cost = $total_cost + $v['cost'];
     $total_value = $total_value + $v['value'];
 }
