@@ -90,8 +90,8 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     $data = json_decode($result,true);
-    $v['last_value'] = $v['unit']*$data['last_val'];
-    $v['previous_value'] = $v['unit']*$data['previous_val'];
+    $i['last_value'] = $v['unit']*$data['last_val'];
+    $i['previous_value'] = $v['unit']*$data['previous_val'];
     $total_cost = $total_cost + $v['cost'];
     $total_last_value = $total_last_value + $v['last_value'];
     $total_previous_value = $total_previous_value + $v['previous_value'];
