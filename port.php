@@ -94,7 +94,7 @@ foreach ($port as $i => $v) {
     $v['previous_value'] = $v['unit']*$data['previous_val'];
     $total_cost = $total_cost + $v['cost'];
     $total_last_value = $total_last_value + $v['last_value'];
-    $total_previous_value = $total_previous_value + $v['previous_value']
+    $total_previous_value = $total_previous_value + $v['previous_value'];
 }
 
 //Show result
