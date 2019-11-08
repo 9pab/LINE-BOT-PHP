@@ -99,7 +99,7 @@ foreach ($port as $i => $v) {
     $total_previous_value = $total_previous_value + $previous_value;
 }
 
-
+//Cut from here
 $port['date'] = $date;
 $port['total_cost'] = $total_cost;
 $port['total_last_value'] = $total_last_value;
