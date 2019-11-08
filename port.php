@@ -102,7 +102,7 @@ foreach ($port as $i => $v) {
     curl_close($ch);
 
     $data = json_decode($result,true);
-    print $i . " = " . $v['name'] . "   NAV = ". $data['last_val'] . "<br>";
+    print $v['name'] . " Cost = " . $v['cost'] . " Value = " . $v['value'] = $v['unit']*$data['last_val'] . "<br>";
 }
 
 //Show result
