@@ -92,6 +92,8 @@ foreach ($port as $i => $v) {
     $data = json_decode($result,true);
     $v['last_value'] = $v['unit']*$data['last_val'];
     $v['previous_value'] = $v['unit']*$data['previous_val'];
+    $port['last_value'] = number_format($v['last_value'],2);
+    $port['previous_value'] = number_format($v['previous_value'],2);
     $total_cost = $total_cost + $v['cost'];
     $total_last_value = $total_last_value + $v['last_value'];
     $total_previous_value = $total_previous_value + $v['previous_value'];
@@ -103,9 +105,9 @@ print $total_last_value . "<Br>";
 print $total_previous_value . "<Br>";
 
 $port['date'] = $date;
-$port['total_cost'] = $total_cost;
-$port['total_last_value'] = $total_last_value;
-$port['total_previous_value'] = $total_previous_value;
+$port['total_cost'] = number_format($total_cost,2);
+$port['total_last_value'] = number_format($total_last_value,2);
+$port['total_previous_value'] = number_format($total_previous_value,2);
 
 print json_encode($port);
 
