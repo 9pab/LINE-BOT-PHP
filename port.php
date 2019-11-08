@@ -102,5 +102,12 @@ print $total_cost . "<Br>";
 print $total_last_value . "<Br>";
 print $total_previous_value . "<Br>";
 
+$port['date'] = $date;
+$port['total_cost'] = $total_cost;
+$port['total_last_value'] = $total_last_value;
+$port['total_previous_value'] = $total_previous_value;
+
+print json_encode($port);
+
 /*
 ?>
