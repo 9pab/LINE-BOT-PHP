@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['contents']['type'] = "bubble";
 					$arrayPostData['messages'][1]['contents']['size'] = "giga";
 					$arrayPostData['messages'][1]['contents']['body']['type'] = "box";
-					$arrayPostData['messages'][1]['contents']['body']['layout'] = "vertical";
+					//$arrayPostData['messages'][1]['contents']['body']['layout'] = "vertical";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['type'] = "text";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['text'] = "Hello 1";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][1]['type'] = "text";
