@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['contents']['header']['type'] = "box";
 					$arrayPostData['messages'][1]['contents']['header']['layout'] = "vertical";
 					$arrayPostData['messages'][1]['contents']['header']['contents'][0]['type'] = "text";
-					$arrayPostData['messages'][1]['contents']['header']['contents'][0]['type'] = "Portfolio";
+					$arrayPostData['messages'][1]['contents']['header']['contents'][0]['text'] = "Portfolio";
 					$arrayPostData['messages'][1]['contents']['body']['type'] = "box";
 					$arrayPostData['messages'][1]['contents']['body']['layout'] = "horizontal";
 					$arrayPostData['messages'][1]['contents']['body']['contents'][0]['type'] = "text";
