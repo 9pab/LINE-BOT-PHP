@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['contents']['body']['contents'][1]['text'] = "Hello 2";
 
 					$txt = '{"type": "flex","altText": "Flex Message","contents": {"type": "bubble","size": "giga","body": {"type": "box","contents": [{"type": "text","text": "World 1"},{"type": "text","text": "World 2"}]}}}';
-					arrya_push(json_decode($txt,TRUE),$arrayPostData['messages'][2]);
+					array_push($arrayPostData['messages'],json_decode($txt, true));
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
