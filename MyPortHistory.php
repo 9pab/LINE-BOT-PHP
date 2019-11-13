@@ -62,7 +62,7 @@ if ($change > 0) {$change = '+'.$change;$r_change = '+'.$r_change;}
 $data = array("value1" => $date, "value2" => $GT, "value3" => $cost);
 $data_string = json_encode($data);
 
-$ch = curl_init('https://maker.ifttt.com/trigger/NAV/with/key/4IATSriSb9uIgYMbWKN1C');
+$ch = curl_init('https://maker.ifttt.com/trigger/NAV/with/key/dZ7P7hCp3QbvE8pcLmm16I');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
