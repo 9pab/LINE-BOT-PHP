@@ -18,8 +18,8 @@ $port = array(
     2 => array(
         'name' => 'KFLTFDIV',
         'id' => 'M0607_2547',
-        'unit' => 7373.6545,
-        'cost' => 195524.29,
+        'unit' => 8596.8959,
+        'cost' => 225524.29,
     ),
     3 => array(
         'name' => 'KFLTFEQ70D',
@@ -42,8 +42,8 @@ $port = array(
     6 => array(
         'name' => 'KFSMART',
         'id' => 'M0167_2559',
-        'unit' => 9684.9249,
-        'cost' => 99749.22,
+        'unit' => 9703.9536,
+        'cost' => 99950.54,
     ),
     7 => array(
         'name' => 'KTSTPLUS-A',
