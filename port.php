@@ -6,8 +6,8 @@ $port = array(
     0 => array(
         'name' => 'KFLTF50',
         'id' => 'M0712_2547',
-        'unit' => 1584.1752,
-        'cost' => 55016.79,
+        'unit' => 1638.7239,
+        'cost' => 60000.00,
     ),
     1 => array(
         'name' => 'KFLTFAST-D',
@@ -18,14 +18,14 @@ $port = array(
     2 => array(
         'name' => 'KFLTFDIV',
         'id' => 'M0607_2547',
-        'unit' => 8596.8959,
-        'cost' => 225524.29,
+        'unit' => 8585.7650,
+        'cost' => 217800.00,
     ),
     3 => array(
         'name' => 'KFLTFEQ70D',
         'id' => 'M0357_2549',
-        'unit' => 9122.5557,
-        'cost' => 146000.00,
+        'unit' => 9131.9018,
+        'cost' => 144000.00,
     ),
     4 => array(
         'name' => 'KFLTFSTARD',
@@ -42,8 +42,8 @@ $port = array(
     6 => array(
         'name' => 'KFSMART',
         'id' => 'M0167_2559',
-        'unit' => 9703.9536,
-        'cost' => 99950.54,
+        'unit' => 9518.6283,
+        'cost' => 99030.80,
     ),
     7 => array(
         'name' => 'KTSTPLUS-A',
