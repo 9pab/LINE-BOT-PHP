@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			
 			switch ($command) {
 				case "เปิดไฟ" :
-					$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
+					$url = 'https://maker.ifttt.com/trigger/GarageON/with/key/bLkwIlTssz5qlFsS56rgws';
 					$handle = curl_init($url);
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ปิดไฟ" :
-					$url = 'https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws';
+					$url = 'https://maker.ifttt.com/trigger/GarageOFF/with/key/bLkwIlTssz5qlFsS56rgws';
 					$handle = curl_init($url);
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
