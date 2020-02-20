@@ -24,12 +24,12 @@ if (!is_null($events['events'])) {
 			
 			switch ($command) {
 				case "เปิดไฟ" :
-					$ch = curl_init('https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws');
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
-					$result = curl_exec($ch);
+					//$ch = curl_init('https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws');
+					//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+					//curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+					//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+					//$result = curl_exec($ch);
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "เปิดไฟแล้วจ้า 💡";
 					$arrayPostData['messages'][1]['type'] = "sticker";
@@ -38,12 +38,12 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ปิดไฟ" :
-					$ch = curl_init('https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws');
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
-					$result = curl_exec($ch);
+					//$ch = curl_init('https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws');
+					//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+					//curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+					//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+					//$result = curl_exec($ch);
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "ปิดไฟแล้วนะ";
 					$arrayPostData['messages'][1]['type'] = "sticker";
@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 					$txt = '{"type": "flex","altText": "Flex Message","contents": {"type": "bubble","size": "giga","body": {"type": "box","layout": "vertical","contents": [{"type": "text","text": "World 1"},{"type": "text","text": "World 2"}]}}}';
 					array_push($arrayPostData['messages'],json_decode($txt, TRUE));
 				break;
-				
+
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "\"เปิดไฟ\" หรือ \"ปิดไฟ\"";
