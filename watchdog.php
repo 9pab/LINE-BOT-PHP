@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			
 			switch ($command) {
 				case "เปิดไฟ" :
-					$ch = curl_init('https://maker.ifttt.com/trigger/xxx/with/key/bLkwIlTssz5qlFsS56rgws');
+					$ch = curl_init('https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws');
 					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ปิดไฟ" :
-					$ch = curl_init('https://maker.ifttt.com/trigger/xxx/with/key/bLkwIlTssz5qlFsS56rgws');
+					$ch = curl_init('https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws');
 					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
