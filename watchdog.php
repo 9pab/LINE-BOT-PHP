@@ -23,23 +23,35 @@ if (!is_null($events['events'])) {
 			$command = $event['message']['text'];
 			
 			switch ($command) {
-				case "1" :
-					$url = 'http://ocb1.herokuapp.com/myporttobot.php';
-					$handle = curl_init($url);
-					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
-					$resp = curl_exec($handle);
-					curl_close($handle);
-					
+				case "เปิดไฟ" :
+					$ch = curl_init('https://maker.ifttt.com/trigger/xxx/with/key/bLkwIlTssz5qlFsS56rgws');
+					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+					$result = curl_exec($ch);
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = $resp;
-					break;
-				case "2" :
+					$arrayPostData['messages'][0]['text'] = "เปิดไฟแล้วจ้า 💡";
+					$arrayPostData['messages'][1]['type'] = "sticker";
+					$arrayPostData['messages'][1]['packageId'] = 11537;
+					$arrayPostData['messages'][1]['stickerID'] = 52002740;
+				break;
+
+				case "ปิดไฟ" :
+					$ch = curl_init('https://maker.ifttt.com/trigger/xxx/with/key/bLkwIlTssz5qlFsS56rgws');
+					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+					curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+					$result = curl_exec($ch);
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = $content;
-					$arrayPostData['messages'][1]['type'] = "text";
-					$arrayPostData['messages'][1]['text'] = "You select #2";
-					break;
-				case "3" :
+					$arrayPostData['messages'][0]['text'] = "ปิดไฟแล้วนะ";
+					$arrayPostData['messages'][1]['type'] = "sticker";
+					$arrayPostData['messages'][1]['packageId'] = 11537;
+					$arrayPostData['messages'][1]['stickerID'] = 52002751;
+				break;
+
+				case "testFlex" :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "Flex";
 
@@ -63,7 +75,7 @@ if (!is_null($events['events'])) {
 				break;
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "กด 1 ดูพอร์ตการลงทุน\nกด 2 แสดง content\nกด 3 Flex message giga";
+					$arrayPostData['messages'][0]['text'] = "\"เปิดไฟ\" หรือ \"ปิดไฟ\"";
 			}
 		} else {
 			// Build message to reply back when is not 'text' format
