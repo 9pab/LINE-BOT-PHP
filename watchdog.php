@@ -23,12 +23,12 @@ if (!is_null($events['events'])) {
 			$command = $event['message']['text'];
 			
 			switch ($command) {
-				case "open" :
-					$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
-					$handle = curl_init($url);
-					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
-					$resp = curl_exec($handle);
-					curl_close($handle);
+				case "1" :
+					//$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
+					//$handle = curl_init($url);
+					//curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					//$resp = curl_exec($handle);
+					//curl_close($handle);
 
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "เปิดไฟแล้วจ้า 💡";
