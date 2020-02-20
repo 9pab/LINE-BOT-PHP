@@ -32,9 +32,9 @@ if (!is_null($events['events'])) {
 
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "เปิดไฟแล้วจ้า 💡";
-					//$arrayPostData['messages'][1]['type'] = "sticker";
-					//$arrayPostData['messages'][1]['packageId'] = 11537;
-					//$arrayPostData['messages'][1]['stickerID'] = 52002740;
+					$arrayPostData['messages'][1]['type'] = "sticker";
+					$arrayPostData['messages'][1]['packageId'] = 11537;
+					$arrayPostData['messages'][1]['stickerId'] = 52002740;
 				break;
 
 				case "ปิดไฟ" :
@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][0]['text'] = "ปิดไฟแล้วนะ";
 					$arrayPostData['messages'][1]['type'] = "sticker";
 					$arrayPostData['messages'][1]['packageId'] = 11537;
-					$arrayPostData['messages'][1]['stickerID'] = 52002751;
+					$arrayPostData['messages'][1]['stickerId'] = 52002751;
 				break;
 
 				case "testFlex" :
