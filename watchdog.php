@@ -73,6 +73,7 @@ if (!is_null($events['events'])) {
 					$txt = '{"type": "flex","altText": "Flex Message","contents": {"type": "bubble","size": "giga","body": {"type": "box","layout": "vertical","contents": [{"type": "text","text": "World 1"},{"type": "text","text": "World 2"}]}}}';
 					array_push($arrayPostData['messages'],json_decode($txt, TRUE));
 				break;
+				
 				default :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "\"เปิดไฟ\" หรือ \"ปิดไฟ\"";
