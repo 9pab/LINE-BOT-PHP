@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			$command = $event['message']['text'];
 			
 			switch ($command) {
-				case "เปิดไฟ" :
+				case "open" :
 					//$ch = curl_init('https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws');
 					//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 					//curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
