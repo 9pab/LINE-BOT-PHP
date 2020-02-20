@@ -24,11 +24,11 @@ if (!is_null($events['events'])) {
 			
 			switch ($command) {
 				case "เปิดไฟ" :
-					//$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
-					//$handle = curl_init($url);
-					//curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
-					//$resp = curl_exec($handle);
-					//curl_close($handle);
+					$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
+					$handle = curl_init($url);
+					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					$resp = curl_exec($handle);
+					curl_close($handle);
 
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "เปิดไฟแล้วจ้า 💡";
@@ -38,12 +38,12 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ปิดไฟ" :
-					//$ch = curl_init('https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws');
-					//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					//curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-					//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
-					//$result = curl_exec($ch);
+					$url = 'https://maker.ifttt.com/trigger/GarageOFF0/with/key/bLkwIlTssz5qlFsS56rgws';
+					$handle = curl_init($url);
+					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					$resp = curl_exec($handle);
+					curl_close($handle);
+
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "ปิดไฟให้แล้วจ้า";
 					$arrayPostData['messages'][1]['type'] = "sticker";
