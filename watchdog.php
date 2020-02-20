@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			$command = $event['message']['text'];
 			
 			switch ($command) {
-				case "1" :
+				case "เปิดไฟ" :
 					//$url = 'https://maker.ifttt.com/trigger/GarageON0/with/key/bLkwIlTssz5qlFsS56rgws';
 					//$handle = curl_init($url);
 					//curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 					//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
 					//$result = curl_exec($ch);
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "ปิดไฟแล้วนะ";
+					$arrayPostData['messages'][0]['text'] = "ปิดไฟให้แล้วจ้า";
 					$arrayPostData['messages'][1]['type'] = "sticker";
 					$arrayPostData['messages'][1]['packageId'] = 11537;
 					$arrayPostData['messages'][1]['stickerId'] = 52002751;
