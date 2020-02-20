@@ -1,7 +1,6 @@
 <?php // webhooks.php
 
 $access_token = 'rf5P0JaObU4jOLTNFEeST6eeSSMs9gwLfcAu6Pg61hn/8CnPkaC1mlpOn0uao6lATZ7c5Ta7BiftI/tFY6DmW40J3qkD0ZcHJiWjzDOz1E/D3bjeolHIvc7mKsbQY7R+/A8GUr8/O76K9JH8kvFJOAdB04t89/1O/w1cDnyilFU=';
-$pushID = 'U3892909119edd655235f467088f954f6';
 
 $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
