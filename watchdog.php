@@ -61,10 +61,19 @@ if (!is_null($events['events'])) {
 					$pm25 = $AQIdata[data][current][pollution][aqius];
 
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = "ค่าฝุ่นละอองที่ห้วยขวางขณะนี้ ". $pm25;
-					//$arrayPostData['messages'][1]['type'] = "sticker";
-					//$arrayPostData['messages'][1]['packageId'] = 11537;
-					//$arrayPostData['messages'][1]['stickerId'] = 52002751;
+					$arrayPostData['messages'][0]['text'] = "ค่าฝุ่นละอองที่บ้านขณะนี้ ". $pm25;
+
+					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf';
+					$handle = curl_init($url);
+					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					$resp = curl_exec($handle);
+					curl_close($handle);
+					$AQIdata = json_decode($resp,true);
+					$pm25 = $AQIdata[data][current][pollution][aqius];
+
+					$arrayPostData['messages'][1]['type'] = "text";
+					$arrayPostData['messages'][1]['text'] = "ค่าฝุ่นละอองที่อยู่้ขณะนี้ ". $pm25;
+
 				break;
 
 				case "testFlex" :
