@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ฝุ่น" :
-					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.7863959&lon=100.5697047';
+					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.7864783&lon=100.5691628';
 					$handle = curl_init($url);
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
