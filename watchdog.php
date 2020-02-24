@@ -72,7 +72,7 @@ if (!is_null($events['events'])) {
 					$pm25 = $AQIdata[data][current][pollution][aqius];
 
 					$arrayPostData['messages'][1]['type'] = "text";
-					$arrayPostData['messages'][1]['text'] = "ค่าฝุ่นละอองที่อยู่้ขณะนี้ ". $pm25;
+					$arrayPostData['messages'][1]['text'] = "ค่าฝุ่นละอองที่อยู่้ขณะนี้ ". $AQIdata[data][city] . $pm25;
 
 				break;
 
