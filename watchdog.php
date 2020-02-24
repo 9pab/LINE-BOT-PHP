@@ -57,16 +57,14 @@ if (!is_null($events['events'])) {
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
 					curl_close($handle);
-
 					$AQIdata = json_decode($resp,true);
-
 					$pm25 = $AQIdata[data][current][pollution][aqius];
 
 					$arrayPostData['messages'][0]['type'] = "text";
-					$arrayPostData['messages'][0]['text'] = $pm25;
-					$arrayPostData['messages'][1]['type'] = "sticker";
-					$arrayPostData['messages'][1]['packageId'] = 11537;
-					$arrayPostData['messages'][1]['stickerId'] = 52002751;
+					$arrayPostData['messages'][0]['text'] = "ค่าฝุ่นละอองที่ห้วยขวางขณะนี้ ". $pm25;
+					//$arrayPostData['messages'][1]['type'] = "sticker";
+					//$arrayPostData['messages'][1]['packageId'] = 11537;
+					//$arrayPostData['messages'][1]['stickerId'] = 52002751;
 				break;
 
 				case "testFlex" :
