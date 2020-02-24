@@ -51,6 +51,24 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][1]['stickerId'] = 52002751;
 				break;
 
+				case "ฝุ่น" :
+					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.7866207&lon=100.5673775';
+					$handle = curl_init($url);
+					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+					$resp = curl_exec($handle);
+					curl_close($handle);
+
+					$AQIdata = json_decode($resp,true);
+
+					$pm25 = $AQIdata[data][current][pollution][aqius];
+
+					$arrayPostData['messages'][0]['type'] = "text";
+					$arrayPostData['messages'][0]['text'] = $pm25;
+					$arrayPostData['messages'][1]['type'] = "sticker";
+					$arrayPostData['messages'][1]['packageId'] = 11537;
+					$arrayPostData['messages'][1]['stickerId'] = 52002751;
+				break;
+
 				case "testFlex" :
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "Flex";
@@ -81,7 +99,7 @@ if (!is_null($events['events'])) {
 		} else {
 			// Build message to reply back when is not 'text' format
 			$arrayPostData['messages'][0]['type'] = "text";
-			$arrayPostData['messages'][0]['text'] = $content."\n\nกรุณาส่งเป็นข้อความเท่านั้น";
+			$arrayPostData['messages'][0]['text'] = "กรุณาส่งเป็นข้อความเท่านั้น";
 		}
 	pushMsg($arrayHeader,$arrayPostData);
 	}
