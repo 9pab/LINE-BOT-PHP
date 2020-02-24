@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "ฝุ่น" :
-					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.7866207&lon=100.5673775';
+					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.786466&lon=100.569718';
 					$handle = curl_init($url);
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
@@ -63,7 +63,7 @@ if (!is_null($events['events'])) {
 					$arrayPostData['messages'][0]['type'] = "text";
 					$arrayPostData['messages'][0]['text'] = "ค่าฝุ่นละอองที่สุทธิสารขณะนี้ ". $pm25;
 
-					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.7184556&lon=100.5683914';
+					$url = 'https://api.airvisual.com/v2/nearest_city?key=1c65f3ba-d673-424e-8bd0-bccda70491cf&lat=13.6922608&lon=100.532048';
 					$handle = curl_init($url);
 					curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 					$resp = curl_exec($handle);
