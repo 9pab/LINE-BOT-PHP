@@ -10,8 +10,6 @@ $MyPort = array(
   'KFLTFEQ70D' => array('M0357_2549', 9131.9018, 144000.00),
   'KFLTFSTARD' => array('M0475_2560', 3460.4705, 33000.00),
   'KFSDIV' => array('M0081_2550' ,5304.8621, 58066.44),
-  'KFSMART' => array('M0167_2559',  9518.6283,  99030.80),
-  'KTSTPLUS-A' => array('M0304_2559', 2897.6698, 30000.00),
 );
 
 //Check response
